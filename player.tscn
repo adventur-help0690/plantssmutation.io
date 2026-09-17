@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://bj1y375o7wh0l"]
-
-[node name="Player" type="Area2D" unique_id=1418037744]
-metadata/_edit_group_ = true
