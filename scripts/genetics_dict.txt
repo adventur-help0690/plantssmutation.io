@@ -1,0 +1,13 @@
+# This file contains the genetics dictionary for the project. It maps the genetic codes to their corresponding traits.
+# CAPS for dominant traits, lowercase for recessive traits.
+
+S - Short
+s - Tall
+
+G - Green
+g - Blue
+
+Y - Yield 1
+y - Yield 2
+
+# If any other genetics appear but not listed here, maybe it's naming mistake.

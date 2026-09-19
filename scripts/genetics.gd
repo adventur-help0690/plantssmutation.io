@@ -50,13 +50,10 @@ func _mutate_genotype(genotype: String) -> String:
 func _express_trait(gene_name: String, genotype: String):
 	match gene_name:
 		"height":
-			return "tall" if genotype.contains("T") else "short"
+			return "short" if genotype.contains("S") else "tall"
 		"color":
 			return "purple" if genotype.contains("P") else "green"
 		"yield":
 			return 2 if genotype.contains("Y") else 1
 		_:
 			return genotype
-
-func _process(delta: float) -> void:
-	pass
