@@ -52,7 +52,7 @@ func _express_trait(gene_name: String, genotype: String):
 		"height":
 			return "short" if genotype.contains("S") else "tall"
 		"color":
-			return "purple" if genotype.contains("P") else "green"
+			return "green" if genotype.contains("G") else "blue"
 		"yield":
 			return 2 if genotype.contains("Y") else 1
 		_:

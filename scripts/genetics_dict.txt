@@ -1,3 +1,4 @@
+# genetics_dict
 # This file contains the genetics dictionary for the project. It maps the genetic codes to their corresponding traits.
 # CAPS for dominant traits, lowercase for recessive traits.
 

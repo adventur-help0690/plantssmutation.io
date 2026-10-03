@@ -6,12 +6,12 @@ extends Node
 class_name Farm
 
 const GROWTH_PER_SECOND: float = 1.0
-const DEHYDRATION_PER_SECOND: float = 0.02
+const DEHYDRATION_PER_SECOND: float = 0.01
 const MATURE_AGE: float = 10.0
 const MAX_HYDRATION: float = 1.0
 
-var plant_database: PlantDatabase
-var genetics: PlantGenetics
+var plant_database := PlantDatabase.new()
+var genetics := PlantGenetics.new()
 
 func _ready() -> void:
 	plant_database = PlantDatabase.new()
@@ -33,8 +33,11 @@ func advance_time(seconds: float) -> void:
 	if seconds <= 0.0:
 		return
 	for plant in plant_database.plants:
-		plant.age += seconds * GROWTH_PER_SECOND
-		plant.hydration = maxf(0.0, plant.hydration - seconds * DEHYDRATION_PER_SECOND)
+		if plant.hydration > 0.0:
+			plant.age += seconds * GROWTH_PER_SECOND
+
+		plant.hydration = maxf(0.0,
+			plant.hydration - seconds * DEHYDRATION_PER_SECOND)
 
 func water_plant(plant: PlantDatabase.PlantData, amount: float = 1.0) -> void:
 	plant.hydration = minf(MAX_HYDRATION, plant.hydration + maxf(0.0, amount))
